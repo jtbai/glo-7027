@@ -28,17 +28,17 @@ Le jeu de donnee manquantes
 
 En utilisant R pour importer les donnees, il semble qu'il manque beaucoup de variables dans le jeu de donnees. En effet, les champs BsmtCond, dsfsdf, etc manquent un nombre non negligeable de donnees et il serait important de bien comprendre la nature de ces manquements.
 
-En regardant de plus pret, il est possible de voir que la plupart des NA sont du au fait que NA est une valeur possible dans le jeu de donnees et qu'elle a une signification propres (par exemple NA dans le camps Pool signifie qu'il n'y a pas de piscine.)
-Cependant, 3 variables sembent avoir des NA qui sont reelement des donnees manquantes. LotFacade, MsType et ...
+En regardant de plus pret, il est possible de voir que la plupart des NA sont du au fait que NA est une valeur possible dans le jeu de donnees et qu'elle a une signification propres (par exemple NA dans le champs Pool signifie qu'il n'y a pas de piscine.)
+une analyse des donnees manquantes pour ces champs est proposee par un memnbre d'un Kernel et est tres pertinente. Bien que NA aie une valeur intrinseque aux donnes, certaines donnees sont reelement manquantes et devront etre imputees. Cependant, comme il s'agit d'un nombre tres petit de donnees ( inferieu a 1%)
+nous utiliserons une methode simple (i.e. Hot deck).
 
+Cependant, 3 variables semblent avoir des NA qui sont reelement des donnees manquantes. LotFacade, MsType et ...
+Les deux premiere variables manquantes, Ms Type et chose, il n'en manque que 8 et une technique simple pourrait etre utilisee sans trop debalancer le jeu de donees.
+Pour LotFacade, il manque environ 18% du jeu de donnees. Deux choix s'offrent a nous. l'alternative est d'exclure cette variable explicative ou d'utiliser une methode d'immputation qui conservera les proprietes statistisque de cette variable et son lien de correlation avec les autres variables.
+dans le cas ou nous conserverions la variable, nous ferions l'hypothese que les donnees sont manquante aleatoirement et utiliserons la methode d'imputation par regression stochastique pour combler ces valeur.
 
-
-
-Missing Data:
-
-
-Curse of Dimentionality:
 Class imbalance:
+
 Noise:
 
 Donnees aditionnelles / Feature engineering
