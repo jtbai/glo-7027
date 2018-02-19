@@ -1,0 +1,26 @@
+Problemes et Pretraitement des donnnes (/2)
+
+
+Missing Data:
+Curse of Dimentionality:
+Class imbalance:
+Noise:
+
+Donnees aditionnelles / Feature engineering
+
+Comment les jeux de donees vont etre connectes
+Structure et stockage en memoire
+
+
+Procedure de test (/2)
+
+Comment on debogue notre algo ?
+
+
+Retour sur le premier rapport
+
+quelle sont les avenues les plus prometteuses (/2)
+
+perspective globale et planification (/1)
+
+
