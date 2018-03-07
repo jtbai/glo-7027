@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from sklearn import linear_selection, metrics, linear_model, decomposition, ensemble
 
 train = pd.read_csv("train.csv")  # use new dataset
