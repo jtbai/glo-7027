@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from scipy import stats
+from pickle import dump
 
 train = pd.read_csv("train.csv")
 
@@ -88,8 +88,5 @@ variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
 
 for variable in variable_to_categorise:
     train[variable] = train[variable].astype('category')
-
-
-from pickle import dump
 
 dump(train, open('prepared_data.pyk','wb'))

@@ -1,7 +1,8 @@
 import pandas as pd
 from sklearn import linear_selection, metrics, linear_model, decomposition, ensemble
+from pickle import load
 
-train = pd.read_csv("train.csv")  # use new dataset
+train = load(open('./prepared_data.pyk', 'rb'))
 
 def regressionLineaire(X_train, y_train, X_test, y_test):
     pass
