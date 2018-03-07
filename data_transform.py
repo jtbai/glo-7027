@@ -13,7 +13,6 @@ variables_na = ["Alley", "BsmtQual", "BsmtCond", "BsmtExposure", "BsmtFinType1",
                 "FireplaceQu", "GarageType", "GarageYrBlt", "GarageFinish", "GarageQual", "GarageCond",
                 "PoolQC", "Fence", "MiscFeature"]
 
-
 for i in variables_na:
     nan_places = pd.isna(train[i])
     train.set_value(nan_places, i, "None")
@@ -56,3 +55,5 @@ for index, row in train.iterrows():
 # Remove outliers
 
 train = train[train.GrLivArea < 4000]
+
+pd.DataFrame.to_csv("train_adj.csv")
