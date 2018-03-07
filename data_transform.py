@@ -89,4 +89,7 @@ variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
 for variable in variable_to_categorise:
     train[variable] = train[variable].astype('category')
 
-print(train.MSSubClass)
+
+from pickle import dump
+
+dump(train, open('prepared_data.pyk','wb'))
