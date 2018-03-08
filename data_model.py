@@ -15,15 +15,14 @@ def regressionSVM(X_train, y_train, X_test, y_test):
     parametres = {'gamma': [0.01, 0.1, 1], 'C': [1, 10, 100]}
     if CONFIGS.retrain_svm:
         gridSearch = model_selection.GridSearchCV(svm.SVC(), parametres, n_jobs=6)
-        gridSearch = gridSearch.fit(X_train_reduced, y_train)
+        gridSearch = gridSearch.fit(X_train, y_train)
         joblib.dump(gridSearch, 'gridSearchSVM.pkl')
     else:
         gridSearch = joblib.load('gridSearchSVM.pkl')
 
 def regressionLineaireSimple(X_train, y_train, X_test, y_test):
-    parametres = {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}
     if CONFIGS.retrain_linear_model:
-        gridSearch = model_selection.GridSearchCV(linear_model.LinearRegression(), parametres, n_jobs=6)
+        gridSearch = linear_model.LinearRegression()
         gridSearch = gridSearch.fit(X_train, y_train)
         joblib.dump(gridSearch, 'gridSearchLinearRegression.pkl')
     else:
