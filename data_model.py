@@ -1,11 +1,12 @@
 import config_classifier
 from config_classifier import config_classifier
 from pickle import load
-from sklearn import model_selection, metrics, naive_bayes, svm, linear_model, ensemble, decomposition
+from sklearn import model_selection, metrics, svm, linear_model, ensemble, decomposition
 import time
 from sklearn.externals import joblib
 
 CONFIGS = config_classifier()
+
 
 def printResults(nomRegresseur, y_train, y_train_pred, y_test, y_test_pred, bestParams):
     result_file = open("Resultats\\" + nomRegresseur + ".txt", "w")
@@ -13,6 +14,7 @@ def printResults(nomRegresseur, y_train, y_train_pred, y_test, y_test_pred, best
     result_file.write("Score train : " + str(metrics.r2_score(y_train, y_train_pred)) + "\n")
     result_file.write("Score test : " + str(metrics.r2_score(y_test, y_test_pred)) + "\n")
     # result_file.write("Score test : " + str(metrics.roc_auc_score(y_test, y_test_pred)) + "\n")
+
 
 def regressionSVM(X_train, y_train, X_test, y_test):
     # X_PCA = decomposition.PCA(n_components=10).fit(X_train)
@@ -31,6 +33,7 @@ def regressionSVM(X_train, y_train, X_test, y_test):
     y_test_pred = gridSearch.predict(X_test)
     printResults("svm", y_train, y_train_pred, y_test, y_test_pred, str(gridSearch.best_params_))
 
+
 def regressionLineaireSimple(X_train, y_train, X_test, y_test):
     if CONFIGS.retrain_linear_model:
         gridSearch = linear_model.LinearRegression()
@@ -42,6 +45,7 @@ def regressionLineaireSimple(X_train, y_train, X_test, y_test):
     y_train_pred = gridSearch.predict(X_train)
     y_test_pred = gridSearch.predict(X_test)
     printResults("linear_models", y_train, y_train_pred, y_test, y_test_pred, "NA")
+
 
 def regressionRandomForest(X_train, y_train, X_test, y_test):
     parametres = {'min_samples_leaf': [1, 5, 10, 20, 50], 'n_estimators': [50, 100, 250]}
@@ -56,12 +60,15 @@ def regressionRandomForest(X_train, y_train, X_test, y_test):
     y_test_pred = gridSearch.predict(X_test)
     printResults("random_forest", y_train, y_train_pred, y_test, y_test_pred, str(gridSearch.best_params_))
 
+
 def regressionGLM(X_train, y_train, X_test, y_test):
     pass
+
 
 def regressionGAM(X_train, y_train, X_test, y_test):
     # Utiliser py-earth ?
     pass
+
 
 def regressionGradientBoosting(X_train, y_train, X_test, y_test):
     parametres = {'max_depth': [3, 5, 10], 'n_estimators': [50, 100, 250]}
