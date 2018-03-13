@@ -7,9 +7,8 @@ from sklearn.externals import joblib
 
 CONFIGS = config_classifier()
 
-
 def printResults(nomRegresseur, y_train, y_train_pred, y_test, y_test_pred, bestParams):
-    result_file = open("Resultats\\" + nomRegresseur + ".txt", "w")
+    result_file = open("Resultats/" + nomRegresseur + ".txt", "w")
     result_file.write("Meilleurs parametres : " + bestParams + "\n")
     result_file.write("Score train : " + str(metrics.r2_score(y_train, y_train_pred)) + "\n")
     result_file.write("Score test : " + str(metrics.r2_score(y_test, y_test_pred)) + "\n")
@@ -87,12 +86,12 @@ def regressionGradientBoosting(X_train, y_train, X_test, y_test):
 if __name__ == '__main__':
     train = load(open('./prepared_data.pyk', 'rb'))
 
-    # X = train.loc[:, train.columns != "SalePrice"]
-    X = train.loc[:, train.columns[[range(1, 3)]]]
+    X = train.loc[:, train.columns != "SalePrice"]
+    # X = train.loc[:, train.columns[[range(1, 6)]]]
     y = train.SalePrice
 
     X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_size=0.3)
-
+    start_time_global = time.time()
     if CONFIGS.use_linear_model:
         print('Linear model')
         start_time = time.time()
@@ -134,3 +133,6 @@ if __name__ == '__main__':
         regressionRandomForest(X_train, y_train, X_test, y_test)
         print("--- %s seconds ---" % (time.time() - start_time))
         print('')
+
+    print('Total')
+    print("--- %s seconds ---" % (time.time() - start_time_global))

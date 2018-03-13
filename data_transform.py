@@ -26,6 +26,9 @@ nan_places = pd.isna(train["Electrical"])
 mode_to_use = train['Electrical'].mode()
 train.set_value(nan_places, "Electrical", mode_to_use[0])
 
+train.LotFrontage = train.LotFrontage.fillna(train.LotFrontage.mean())
+train.MasVnrArea = train.LotFrontage.fillna(train.MasVnrArea.mean())
+
 #########################
 # Transform and binning #
 #########################
@@ -81,7 +84,6 @@ for index, sale in train.iterrows():
         train.set_value(index, col, val_to_replace)
     train.set_value(index, "MoSold", int(isHighSeason(sale)))
 
-
 variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
                           'Neighborhood', 'HouseStyle', 'RoofStyle', 'Exterior1st', 'Exterior2nd', 'MasVnrType',
                           'MasVnrArea', 'Foundation', 'GarageType', 'MiscFeature']
@@ -89,4 +91,5 @@ variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
 for variable in variable_to_categorise:
     train[variable] = train[variable].astype('category')
 
+train = pd.get_dummies(train)
 dump(train, open('prepared_data.pyk', 'wb'))

@@ -5,8 +5,8 @@ class config_classifier:
         self.use_svm = True
         self.use_random_forest = True
         self.use_linear_model = True
-        self.use_generalised_linear_model = False
-        self.use_generalised_additive_model = False
+        self.use_generalised_linear_model = True
+        self.use_generalised_additive_model = True
         self.use_gradient_boosting = True
 
         # definit si on reentraine ou si on recharge le fichier .pkl pour les algorithmes

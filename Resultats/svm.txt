@@ -1,3 +1,3 @@
-Meilleurs parametres : {'C': 1, 'gamma': 0.1}
-Score train : 0.327169177339
-Score test : 0.349752285332
+Meilleurs parametres : {'C': 10, 'gamma': 0.1}
+Score train : 0.946689341479
+Score test : -0.00644950435699
