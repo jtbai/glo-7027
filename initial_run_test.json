@@ -1,6 +1,6 @@
 {
     "trained_model_path" : "trained_models",
-    "output_path" : "output",
+    "output_path" : "outputs",
 
     "model_to_train":[
         "svm",
