@@ -1,3 +1,0 @@
-Meilleurs parametres : NA
-Score train : 0.959510262249
-Score test : -2257551857.65

@@ -1,4 +1,4 @@
-from regressions_methods import *
+from models import *
 
 TRAINED_MODEL_PATH_CONFIG_KEY = "trained_model_path"
 OUTPUT_PATH_CONFIG_KEY = "output_path"
@@ -10,8 +10,10 @@ class ConfigClassifier:
     model_to_execute = None
 
     model_mapping = {
-        "svm": SVM,
-        "linear_model": RegressionLineaireSimple
+        "svm": SupportVectorMachineRegression,
+        "linear_model": SimpleLinearRegression,
+        "gradient_boosting":GradientBoostingRegression,
+        "random_forest": RandomForestRegression
     }
 
     def __init__(self, config_dictionnary):
