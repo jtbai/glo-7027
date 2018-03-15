@@ -46,8 +46,8 @@ class BaseModel:
 
     def execute(self, X_train, y_train, X_test, y_test):
         start_time = time()
-        grid_search = self._get_grid_search(X_train, y_train)
         print(self.nom_regresseur)
+        grid_search = self._get_grid_search(X_train, y_train)
         if self.run_model:
             y_predicted_train, y_predicted_test = self._run(grid_search, X_train, y_train, X_test, y_test)
             self.compute_and_output_kaggle_score(y_test, y_predicted_test)

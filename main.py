@@ -36,7 +36,7 @@ if __name__ == '__main__':
         fold_finish_time = time.time()
         fold_time = fold_finish_time - fold_start_time
         total_time = fold_finish_time - start_time
-        time_record = "fold {}/{} : {}s (total: {})".format(index, len(X), fold_time, total_time)
+        time_record = "fold {}/{} : {}s (total: {})".format(index+1, len(X), fold_time, total_time)
         print(time_record)
         with open("time_record.txt",'w') as time_file:
             time_file.write("{}\n".format(time_record))
