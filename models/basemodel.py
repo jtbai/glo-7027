@@ -53,12 +53,12 @@ class BaseModel:
             self.compute_and_output_kaggle_score(y_test, y_predicted_test)
             self.compute_and_output_r2_metric(grid_search, y_train, y_predicted_train, y_test, y_predicted_test)
         run_time = time() - start_time
-        print("--- {} seconds ---".format(run_time))
-        print('')
+        # print("--- {} seconds ---".format(run_time))
+        # print('')
 
     def _output_kaggle_evaluation_metric(self, y_test, y_test_pred):
         kaggle_metric = np.sqrt(np.mean(np.power((np.log10(y_test)-np.log10(y_test_pred)),2)))
-        print(kaggle_metric)
+
         with open(path.join(self.output_path, "kaggle_{}.txt".format(self.nom_regresseur)), "a") as output_file:
             output_file.write("{}\n".format(kaggle_metric))
 
@@ -66,9 +66,6 @@ class BaseModel:
         with open(path.join(self.output_path, "{}.txt".format(self.nom_regresseur)), "a") as result_file:
 
             result_file.write("Meilleurs parametres : " + bestParams + "\n")
-
-            result_file.write("Score train : " + str(metrics.r2_score(y_train, y_train_pred)) + "\n")
-            result_file.write("Score test : " + str(metrics.r2_score(y_test, y_test_pred)) + "\n")
 
             result_file.write("Score train : " + str(metrics.r2_score(y_train, y_train_pred)) + "\n")
             result_file.write("Score test : " + str(metrics.r2_score(y_test, y_test_pred)) + "\n")
