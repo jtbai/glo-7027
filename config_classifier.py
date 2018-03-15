@@ -7,12 +7,14 @@ MODEL_TO_TRAIN_CONFIG_KEY = "model_to_train"
 
 class ConfigClassifier:
     job_to_do = None
+    model_to_execute = None
 
     model_mapping = {
         "svm": SVM,
+        "linear_model": RegressionLineaireSimple
     }
 
-    def __init__(self, config_dictionnary = None):
+    def __init__(self, config_dictionnary):
         self.model_to_execute = []
         self.__load_config_file(config_dictionnary)
 
@@ -40,4 +42,5 @@ class ConfigClassifier:
 
     def __get_distinct_model_to_train_or_run(self, model_to_train, model_to_run):
         return (x for x in set(model_to_train + model_to_run))
+
 

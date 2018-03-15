@@ -3,7 +3,7 @@ from sklearn import model_selection
 from json import load
 import time
 
-config_dictionary = load(open("initial_run.json"))
+config_dictionary = load(open("initial_run_test.json"))
 Config = ConfigClassifier(config_dictionary)
 
 

@@ -1,0 +1,16 @@
+{
+    "trained_model_path" : "trained_models",
+    "output_path" : "output",
+
+    "model_to_train":[
+        "svm",
+        "linear_model"
+
+    ],
+
+    "model_to_run":[
+        "svm",
+        "linear_model"
+
+    ]
+}
