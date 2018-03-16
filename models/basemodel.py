@@ -57,7 +57,7 @@ class BaseModel:
         # print('')
 
     def _output_kaggle_evaluation_metric(self, y_test, y_test_pred):
-        kaggle_metric = np.sqrt(np.mean(np.power((np.log10(y_test)-np.log10(y_test_pred)),2)))
+        kaggle_metric = np.sqrt(np.mean(np.power((y_test-y_test_pred), 2)))
 
         with open(path.join(self.output_path, "kaggle_{}.txt".format(self.nom_regresseur)), "a") as output_file:
             output_file.write("{}\n".format(kaggle_metric))
