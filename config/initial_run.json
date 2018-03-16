@@ -1,7 +1,14 @@
 {
     "trained_model_path" : "trained_models",
     "output_path" : "resultats",
-
+    "data_transformation" : [
+        {
+            "name":"pca",
+            "parameters": {
+                "number_of_component": 10
+            }
+        }
+    ],
     "model_to_train":[
         "svm",
         "random_forest",
