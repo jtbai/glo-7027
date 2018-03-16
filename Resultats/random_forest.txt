@@ -1,0 +1,3 @@
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.983283553865
+Score test : 0.862161183981

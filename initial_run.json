@@ -1,0 +1,22 @@
+{
+    "trained_model_path" : "trained_models",
+    "output_path" : "output",
+
+    "model_to_train":[
+        "svm",
+        "random_forest",
+        "linear_model",
+        "generalised_linear_model",
+        "generalised_additive_model",
+        "gradient_boosting"
+    ],
+
+    "model_to_run":[
+        "svm",
+        "random_forest",
+        "linear_model",
+        "generalised_linear_model",
+        "generalised_additive_model",
+        "gradient_boosting"
+    ]
+}
