@@ -11,7 +11,7 @@ from data.data_transformation_factory import DataTransformationFactory
 CONFIG_PATH = "config"
 DATA_PATH = "data"
 
-input_data_file_name = 'prepared_data.pyk'
+input_data_file_name = 'train_prepared_data.pyk'
 config_file_name = "initial_run.json"
 
 config_dictionary = json.load(open(path.join(CONFIG_PATH, config_file_name)))
@@ -39,7 +39,7 @@ if __name__ == '__main__':
         transformed_test_x = Transformation.fit_transform(X_test)
 
         for model_to_execute in Config.get_jobs():
-            model_to_execute._run(transformed_train_x, transformed_train_x)
+            model_to_execute.execute(X_train, y_train, X_test, y_test)
 
         fold_finish_time = time.time()
         fold_time = fold_finish_time - fold_start_time

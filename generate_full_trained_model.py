@@ -29,6 +29,10 @@ if __name__ == '__main__':
     for model_to_execute in Config.get_jobs():
         model_to_execute.execute(transformed_train_x, y, None, None)
 
+    for model_to_execute in Config.get_jobs():
+        model_to_execute.train_model = False
+        model_to_execute.execute(None, None, transformed_train_x, None)
+
     fold_finish_time = time.time()
     fold_time = fold_finish_time - fold_start_time
     total_time = fold_finish_time - start_time

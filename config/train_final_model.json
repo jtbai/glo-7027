@@ -3,11 +3,13 @@
     "output_path" : "resultats",
 
     "model_to_train":[
-        "svm"
+        "svm",
+        "linear_model"
     ],
 
     "model_to_run":[
-        "svm"
+        "svm",
+        "linear_model"
     ],
 
     "trained_transformation_path": "trained_data_transformation",
