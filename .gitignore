@@ -108,3 +108,5 @@ ENV/
 
 *.pkl
 *.txt
+*.pyk
+*.xlsx
