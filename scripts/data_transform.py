@@ -3,19 +3,20 @@ import numpy as np
 from pickle import dump
 from os import path
 
+from pandas.tests.io.parser import index_col
+
 DATA_PATH = "data"
 train_input_file_name = "train.csv"
 test_input_file_name = "test.csv"
 outout_file_name = 'prepared_data.pyk'
 
-train = pd.read_csv(path.join(DATA_PATH, train_input_file_name))
-test = pd.read_csv(path.join(DATA_PATH, test_input_file_name))
+train = pd.read_csv(path.join(DATA_PATH, train_input_file_name), index_col = "Id")
+test = pd.read_csv(path.join(DATA_PATH, test_input_file_name), index_col = "Id")
 
 train["data_type"] = "train"
 test["data_type"] = "test"
 
 dataset = train.append(test)
-dataset = dataset.reset_index()
 
 ##################
 # Missing values #
@@ -79,7 +80,7 @@ if "SalePrice" in dataset:
 
 # Remove outliers
 
-dataset = dataset[dataset.GrLivArea < 4000]
+dataset = dataset[~ np.logical_and(dataset.GrLivArea > 4000, dataset.data_type == "train")]
 
 # Qualitaive ordinal to quantitative ordinal
 

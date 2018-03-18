@@ -83,8 +83,9 @@ class BaseModel:
     def __output_predicted(self, predicted_values):
         output_path =  path.join(self.output_path, "{}_test_output.csv".format(self.nom_regresseur))
         with open(output_path, "w") as output_file:
-            for value in predicted_values:
-                output_file.write("{}\n".format(value))
+            output_file.write("Id,SalePrice\n")
+            for index, value in enumerate(predicted_values):
+                output_file.write("{},{}\n".format(index+1461,np.exp(value)))
 
 #
 #
