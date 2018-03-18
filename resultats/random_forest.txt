@@ -1,0 +1,30 @@
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.983485394141048
+Score test : 0.8444099312068519
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.982963693617584
+Score test : 0.899513118335097
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.983140599046311
+Score test : 0.9017522419508243
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 100}
+Score train : 0.9823951034146264
+Score test : 0.8853825416583216
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.9832291675005543
+Score test : 0.857310070854183
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.9833643821696729
+Score test : 0.9021117417767376
+Meilleurs parametres : {'min_samples_leaf': 5, 'n_estimators': 250}
+Score train : 0.9496496985810231
+Score test : 0.8700294705871199
+Meilleurs parametres : {'min_samples_leaf': 5, 'n_estimators': 250}
+Score train : 0.9477495673498538
+Score test : 0.8926085687005829
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 250}
+Score train : 0.9832468627631789
+Score test : 0.8777105190473091
+Meilleurs parametres : {'min_samples_leaf': 1, 'n_estimators': 50}
+Score train : 0.9830750581579566
+Score test : 0.8581382221112033
