@@ -78,7 +78,9 @@ class BaseModel:
             result_file.write("Meilleurs parametres : " + bestParams + "\n")
 
             result_file.write("Score train : " + str(metrics.r2_score(y_train, y_train_pred)) + "\n")
+            result_file.write("Score train : " + str(metrics.mean_squared_error(y_train, y_train_pred)) + "\n")
             result_file.write("Score test : " + str(metrics.r2_score(y_test, y_test_pred)) + "\n")
+            result_file.write("Score test : " + str(metrics.mean_squared_error(y_test, y_test_pred)) + "\n")
 
     def __output_predicted(self, predicted_values):
         output_path =  path.join(self.output_path, "{}_test_output.csv".format(self.nom_regresseur))
