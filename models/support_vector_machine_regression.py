@@ -6,7 +6,7 @@ class SupportVectorMachineRegression(BaseModel):
 
     def _train(self, X_train, y_train):
         parametres = {'gamma': [0.01, 0.1, 1], 'C': [1, 10, 100]}
-        grid_search = model_selection.GridSearchCV(svm.SVR(), parametres, n_jobs=6)
+        grid_search = model_selection.GridSearchCV(svm.SVR(), parametres, n_jobs=6, scoring="neg_mean_squared_error")
         grid_search = grid_search.fit(X_train, y_train)
         return grid_search
 

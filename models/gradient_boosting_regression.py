@@ -6,7 +6,7 @@ class GradientBoostingRegression(BaseModel):
 
     def _train(self, X_train, y_train):
         parametres = {'max_depth': [3, 5, 10], 'n_estimators': [50, 100, 250]}
-        grid_search = model_selection.GridSearchCV(ensemble.GradientBoostingRegressor(), parametres, n_jobs=6)
+        grid_search = model_selection.GridSearchCV(ensemble.GradientBoostingRegressor(), parametres, n_jobs=6, scoring="neg_mean_squared_error")
         grid_search = grid_search.fit(X_train, y_train)
 
         return grid_search
