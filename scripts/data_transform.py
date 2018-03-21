@@ -125,6 +125,8 @@ def isHighSeason(sale):
 
 def garageYear(sale):
     garage = sale["GarageYrBlt"]
+    if garage == 2207:
+        garage = 2007
     if garage == "None":
         return 0
     else:
@@ -147,6 +149,8 @@ variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
 
 for variable in variable_to_categorise:
     dataset[variable] = dataset[variable].astype('category')
+
+dataset["GarageYrBlt"] = dataset["GarageYrBlt"].astype('float')
 
 dataset = pd.get_dummies(dataset)
 dump(dataset[dataset.data_type_train==1], open(path.join(DATA_PATH, "train_{}".format(outout_file_name)), 'wb'))
