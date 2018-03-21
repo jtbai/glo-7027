@@ -145,7 +145,7 @@ for index, sale in dataset.iterrows():
 
 variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
                           'Neighborhood', 'HouseStyle', 'RoofStyle', 'Exterior1st', 'Exterior2nd', 'MasVnrType',
-                          'MasVnrArea', 'Foundation', 'GarageType', 'MiscFeature']
+                          'Foundation', 'GarageType', 'MiscFeature']
 
 for variable in variable_to_categorise:
     dataset[variable] = dataset[variable].astype('category')
