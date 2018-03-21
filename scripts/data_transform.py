@@ -123,6 +123,12 @@ def isHighSeason(sale):
     else:
         return False
 
+def garageYear(sale):
+    garage = sale["GarageYrBlt"]
+    if garage == "None":
+        return 0
+    else:
+        return garage
 
 for index, sale in dataset.iterrows():
     for col in variables_to_zero:
@@ -133,6 +139,7 @@ for index, sale in dataset.iterrows():
             val_to_replace = 1
         dataset.set_value(index, col, val_to_replace)
     dataset.set_value(index, "MoSold", int(isHighSeason(sale)))
+    dataset.set_value(index, "GarageYrBlt", int(garageYear(sale)))
 
 variable_to_categorise = ['MSSubClass', 'MSZoning', 'Street', 'LotShape',
                           'Neighborhood', 'HouseStyle', 'RoofStyle', 'Exterior1st', 'Exterior2nd', 'MasVnrType',
