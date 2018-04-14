@@ -5,7 +5,7 @@ from sklearn import model_selection, svm
 class SupportVectorMachineRegression(BaseModel):
 
     def _train(self, X_train, y_train):
-        parametres = {'gamma': [0.01, 0.1, 1], 'C': [1, 10, 100]}
+        parametres = {'gamma': [1e-10, 1e-11, 1e-12, 1e-13], 'C': [1e3, 1e4, 1e5, 1e6]}
         grid_search = model_selection.GridSearchCV(svm.SVR(), parametres, n_jobs=6)
         grid_search = grid_search.fit(X_train, y_train)
         return grid_search
