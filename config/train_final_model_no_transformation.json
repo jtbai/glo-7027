@@ -1,0 +1,28 @@
+{
+    "trained_model_path" : "trained_models",
+    "output_path" : "resultats",
+
+    "model_to_train":[
+        "svm",
+        "linear_model",
+        "gradient_boosting",
+        "random_forest"
+    ],
+
+    "model_to_run":[
+        "svm",
+        "linear_model",
+        "gradient_boosting",
+        "random_forest"
+    ],
+
+    "trained_transformation_path": "trained_data_transformation",
+    "data_transformation" : [
+        {
+            "name":"pca",
+            "parameters": {
+                "number_of_component": 10
+            }
+        }
+    ]
+}
