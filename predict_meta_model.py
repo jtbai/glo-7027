@@ -59,6 +59,6 @@ for current_prediction_to_add in [PredictedDataFromModel(x, 0.25) for x in data_
     weighted_predicted_data.add_prediction(current_prediction_to_add)
 
 with open(path.join(DATA_PATH, MIXED_MODEL_FILE_NAME), 'w') as mixed_model_output:
-    mixed_model_output.write("{},{} \n".format("Id", "SalePrice"))
+    mixed_model_output.write("{},{}\n".format("Id", "SalePrice"))
     for index, value in weighted_predicted_data.get_normalised_prediction().items():
-        mixed_model_output.write("{},{} \n".format(index, value))
+        mixed_model_output.write("{},{}\n".format(index, value))
