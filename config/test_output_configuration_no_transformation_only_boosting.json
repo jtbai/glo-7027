@@ -1,0 +1,9 @@
+{
+    "trained_model_path" : "trained_models",
+    "output_path" : "resultats/test_outputs",
+
+    "model_to_run":[
+
+        "gradient_boosting"
+    ]
+}

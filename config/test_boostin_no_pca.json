@@ -1,0 +1,21 @@
+{
+    "trained_model_path" : "trained_models",
+    "output_path" : "resultats",
+
+    "model_to_train":[
+        "gradient_boosting"
+    ],
+
+    "model_to_run":[
+        "gradient_boosting"
+    ],
+
+    "data_transformation" : [
+        {
+            "name":"pca",
+            "parameters": {
+                "number_of_component": 50
+            }
+        }
+    ]
+}
