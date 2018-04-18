@@ -6,7 +6,7 @@ class RandomForestRegression(BaseModel):
 
     def _train(self, X_train, y_train):
         parametres = {'min_samples_leaf': [1, 5, 10, 20, 50], 'n_estimators': [50, 100, 250]}
-        grid_search = model_selection.GridSearchCV(ensemble.RandomForestRegressor(oob_score=True), parametres, n_jobs=6, scoring="neg_mean_squared_error")
+        grid_search = model_selection.GridSearchCV(ensemble.RandomForestRegressor(oob_score=True), parametres, n_jobs=6, scoring="hubers")
         grid_search = grid_search.fit(X_train, y_train)
 
         return grid_search

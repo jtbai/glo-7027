@@ -33,7 +33,7 @@ class BaseModel:
         y_predicted = trained_grid_search.predict(X)
         return y_predicted
 
-    def compute_and_output_kaggle_score(self, y_test, y_test_pred,):
+    def compute_and_output_kaggle_score(self, y_test, y_test_pred):
         self._output_kaggle_evaluation_metric(y_test, y_test_pred)
 
     def compute_and_output_r2_metric(self, trained_grid_search, y_train, y_train_pred, y_test, y_test_pred):
@@ -46,10 +46,16 @@ class BaseModel:
         start_time = time()
         print(self.nom_regresseur)
         grid_search = self._get_grid_search(X_train, y_train)
+
         if self.run_model:
             if X_test is None:
                 X_test = X_train
                 y_test = y_train
+
+            if X_train is not None and y_train is not None:
+                with open(path.join(self.output_path, "{}_train_prediction.txt".format(self.nom_regresseur)), "a") as result_file:
+                    for index, prediction in enumerate(grid_search.predict(X_train)):
+                        result_file.write("{},{},{}\n".format(index, prediction, y_train.iloc[index]))
 
             y_predicted_test = self._run(grid_search, X_test)
 
