@@ -53,9 +53,9 @@ data_to_add = [
     path.join(DATA_PATH, "gradient_boosting_test_output.csv"),
     path.join(DATA_PATH, "linear_model_test_output.csv"),
     path.join(DATA_PATH, "random_forest_test_output.csv"),
-    path.join(DATA_PATH, "svm_test_output.csv")
+    # path.join(DATA_PATH, "svm_test_output.csv")
 ]
-for current_prediction_to_add in [PredictedDataFromModel(x, 0.25) for x in data_to_add]:
+for current_prediction_to_add in [PredictedDataFromModel(x, 1/3) for x in data_to_add]:
     weighted_predicted_data.add_prediction(current_prediction_to_add)
 
 with open(path.join(DATA_PATH, MIXED_MODEL_FILE_NAME), 'w') as mixed_model_output:

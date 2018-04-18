@@ -3,19 +3,18 @@
     "output_path" : "resultats",
 
     "model_to_train":[
-        "boosting"
+        "gradient_boosting"
     ],
 
     "model_to_run":[
-        "boosting"
+        "gradient_boosting"
     ],
 
-    "trained_transformation_path": "trained_data_transformation",
     "data_transformation" : [
         {
             "name":"pca",
             "parameters": {
-                "number_of_component": 20
+                "number_of_component": 50
             }
         }
     ]

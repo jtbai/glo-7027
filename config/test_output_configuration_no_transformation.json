@@ -1,15 +1,8 @@
 {
     "trained_model_path" : "trained_models",
     "output_path" : "resultats/test_outputs",
-    "trained_transformation_path": "trained_data_transformation",
-    "train_transformation":[
-        "transformation_pca.pkl"
-    ],
 
     "model_to_run":[
-        "svm",
-        "linear_model",
-        "gradient_boosting",
-        "random_forest"
+        "gradient_boosting"
     ]
 }

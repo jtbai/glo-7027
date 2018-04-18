@@ -7,9 +7,6 @@
     ],
 
     "model_to_run":[
-        "svm",
-        "linear_model",
-        "gradient_boosting",
-        "random_forest"
+        "gradient_boosting"
     ]
 }

@@ -8,14 +8,5 @@
 
     "model_to_run":[
         "gradient_boosting"
-    ],
-
-    "data_transformation" : [
-        {
-            "name":"pca",
-            "parameters": {
-                "number_of_component": 50
-            }
-        }
     ]
 }

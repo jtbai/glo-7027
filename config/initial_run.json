@@ -3,11 +3,11 @@
     "output_path" : "resultats",
 
     "model_to_train":[
-        "svm"
+        "gradient_boosting"
     ],
 
     "model_to_run":[
-        "svm"
+        "gradient_boosting"
     ],
 
     "trained_transformation_path": "trained_data_transformation",
