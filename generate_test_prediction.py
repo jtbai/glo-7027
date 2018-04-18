@@ -12,7 +12,7 @@ CONFIG_PATH = "config"
 DATA_PATH = "data"
 
 input_data_file_name = 'test_prepared_data.pyk'
-config_file_name = "test_output_configuration.json"
+config_file_name = "test_output_configuration_no_transformation.json"
 
 config_dictionary = json.load(open(path.join(CONFIG_PATH, config_file_name)))
 Config = ClassifierConfigurationFactory(config_dictionary)

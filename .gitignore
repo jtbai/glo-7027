@@ -110,3 +110,4 @@ ENV/
 *.txt
 *.pyk
 *.xlsx
+.Rproj.user
